@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+RUN sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+RUN wget https://downloads.apache.org/tomcat/tomcat-10/v10.1.19/bin/apache-tomcat-10.1.19.tar.gz
+RUN sudo tar xzf apache-tomcat-*.tar.gz -C /opt/tomcat
+EXPOSE 8080
+CMD /opt/tomcat/bin/catalina.sh run
